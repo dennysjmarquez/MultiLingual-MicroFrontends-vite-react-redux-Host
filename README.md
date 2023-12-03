@@ -4,7 +4,7 @@
 
 ![img.png](img.png)
 
-Este proyecto sencillo que demuestra la integración de microfrontends utilizando Vite Module Federation con React. Permite cambiar el idioma de forma global, emitiendo un evento desde el host que es escuchado por los demás microfrontends para mantener el idioma sincronizado.
+Este es un proyecto sencillo que demuestra la integración de microfrontends utilizando Vite Module Federation con React. Permite cambiar el idioma de forma global, emitiendo un evento desde el host que es escuchado por los demás microfrontends para mantener el idioma sincronizado.
 
 Cada proyecto tiene independencia completa, con su propio sistema de estado con Redux y lógica aislada.
 
