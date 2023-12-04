@@ -31,7 +31,7 @@ y en su [documentación oficial](https://github.com/originjs/vite-plugin-federat
 
 ---
 
-### **La estructura del proyecto es la siguiente:**
+### **LLa estructura de los componentes locales de cada proyecto es la siguiente:**
 
 ```
 📁 components
