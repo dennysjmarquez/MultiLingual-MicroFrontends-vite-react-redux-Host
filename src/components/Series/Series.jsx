@@ -1,17 +1,20 @@
 import React, { Suspense, useState } from 'react'
-import { SeriesStyles } from '@/components/Series/styles/seriesStyles.js'
 import i18n from '@/i18n.js'
 import { useTranslation } from 'react-i18next'
-// import PropTypes from 'prop-types'
-// Textos
-import './lang'
 
+// Carga de módulos de micro-frontends
 const MovieList = React.lazy(() =>
 	import('remoteMovieList1/MovieList').catch(() => ({ default: () => null }))
 )
 const MovieList2 = React.lazy(() =>
 	import('remoteMovieList2/MovieList').catch(() => ({ default: () => null }))
 )
+
+// Estilos
+import { SeriesStyles } from '@/components/Series/styles/seriesStyles.js'
+
+// Textos
+import './lang'
 
 const SeriesComponent = ({}) => {
 	const { t } = useTranslation()
@@ -72,10 +75,6 @@ const SeriesComponent = ({}) => {
 			</div>
 		</SeriesStyles>
 	)
-}
-
-SeriesComponent.propTypes = {
-	// prop1: PropTypes.string
 }
 
 export const Series = React.memo(SeriesComponent)
