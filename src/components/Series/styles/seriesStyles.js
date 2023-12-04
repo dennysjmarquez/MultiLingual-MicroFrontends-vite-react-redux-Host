@@ -65,7 +65,7 @@ const seriesStyles = css`
 		.series__body {
 			height: 100%;
 
-			& .bod__tooltip {
+			& .body__tooltip {
 				width: 50%;
 				margin: 20px;
 				color: rgb(255, 255, 255);

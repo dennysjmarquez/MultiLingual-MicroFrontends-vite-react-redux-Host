@@ -30,7 +30,7 @@ const NavBarComponent = ({}) => {
 					<img src={viteLogo} className="logo" alt="Vite logo" />
 					<img src={reactLogo} className="logo react" alt="React logo" />
 				</div>
-				<h1>Vite + React + Micro Frontends 🤓</h1>
+				<h1>Micro Frontends + Vite + React + Redux + I18  🤓</h1>
 			</div>
 
 			<div className="language-selector">

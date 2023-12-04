@@ -49,7 +49,7 @@ const SeriesComponent = ({}) => {
 
 				<div className="series__body">
 					{serieSelected === null && (
-						<div className="bod__tooltip">{t('components_series:TOOLTIP')}</div>
+						<div className="body__tooltip">{t('components_series:TOOLTIP')}</div>
 					)}
 
 					{serieSelected === 'serie1' && (
