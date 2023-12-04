@@ -31,7 +31,7 @@ y en su [documentación oficial](https://github.com/originjs/vite-plugin-federat
 
 ---
 
-### **LLa estructura de los componentes locales de cada proyecto es la siguiente:**
+### **La estructura de los componentes locales de cada proyecto es la siguiente:**
 
 ```
 📁 components
@@ -65,8 +65,8 @@ Por favor, asegúrate de tener instaladas estas versiones (o versiones más reci
 
 Este proyecto host se integra con dos proyectos remotos que contienen los componentes de las series. Estos son:
 
-- **Proyecto Remoto 1:** Este proyecto contiene los componentes de una de las series que se muestran en la aplicación host.
-- **Proyecto Remoto 2:** Este proyecto contiene los componentes de la otra serie que se muestra en la aplicación host.
+- **Proyecto Remoto 1:** Este proyecto contiene los componentes de una de las series que se muestran en la aplicación host [https://github.com/dennysjmarquez/MultiLingual-MicroFrontends-vite-react-redux-Remote1](https://github.com/dennysjmarquez/MultiLingual-MicroFrontends-vite-react-redux-Remote1)
+- **Proyecto Remoto 2:** Este proyecto contiene los componentes de la otra serie que se muestra en la aplicación host [https://github.com/dennysjmarquez/MultiLingual-MicroFrontends-vite-react-redux-Remote2](https://github.com/dennysjmarquez/MultiLingual-MicroFrontends-vite-react-redux-Remote2)
 
 Ambos proyectos remotos son fundamentales para la funcionalidad de la aplicación host, ya que proporcionan los datos y la interfaz de usuario para las series que se muestran.
 
