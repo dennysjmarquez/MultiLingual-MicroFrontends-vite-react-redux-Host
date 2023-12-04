@@ -50,7 +50,7 @@ y en su [documentación oficial](https://github.com/originjs/vite-plugin-federat
 
 ### **Tecnologías utilizadas**
 
-Este proyecto fue desarrollado utilizando las siguientes tecnologías y herramientas: React, Redux, React-Redux, redux-thunk, i18next, react-i18next, Styled Components, Vite.
+Este proyecto fue desarrollado utilizando las siguientes tecnologías y herramientas: React, Redux, React-Redux, redux-thunk, i18next, react-i18next, Styled Components, vite-plugin-federation, Vite.
 
 ### **Requisitos del sistema**
 
