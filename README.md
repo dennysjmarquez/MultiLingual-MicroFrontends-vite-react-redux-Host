@@ -112,7 +112,7 @@ La opción `shared` se utiliza para definir los módulos que serán compartidos 
 Esto significa que tanto el host como los remotos utilizarán la misma instancia de estos módulos. Esto es beneficioso por varias razones:
 
 1. **Optimización del rendimiento**: Al compartir módulos entre el host y los remotos, se evita la necesidad de cargar la misma biblioteca varias veces. Esto puede resultar en una disminución significativa del tiempo de carga y del uso de la memoria.
-
+    
 2. **Consistencia**: Al utilizar la misma instancia de un módulo en todo el proyecto, se garantiza que todos los componentes se comporten de la misma manera, ya que todos utilizan exactamente la misma versión del módulo.
 
 3. **Interoperabilidad**: Al compartir módulos, se facilita la comunicación y la interoperabilidad entre el host y los remotos. Esto es especialmente útil cuando se utilizan bibliotecas de gestión de estado como 'react-redux', ya que permite que el estado se gestione de manera coherente en todo el proyecto.
@@ -167,7 +167,7 @@ const MovieList2 = React.lazy(() =>
 )
 ```
 
-En el host, estás consumiendo estos componentes remotos en tu componente Series.jsx utilizando React.lazy() para importarlos.
+En el host, estás consumiendo estos componentes remotos en el componente Series.jsx utilizando React.lazy() para importarlos.
 
 Además, estás manejando los errores de importación con .catch(() => ({ default: () => null })) para asegurarte de que tu aplicación no se rompa si hay algún problema al importar los componentes remotos.
 
