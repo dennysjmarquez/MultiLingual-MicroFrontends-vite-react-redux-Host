@@ -106,7 +106,8 @@ federation({
 - `remotes`: Define los microfrontends remotos con sus rutas específicas.
 - `shared`: Define los módulos que serán compartidos entre el host y los microfrontends remotos. Al marcar un módulo como compartido, estás indicando que tanto el host como los microfrontends remotos deben utilizar la misma instancia de ese módulo.
 
-La opción `shared` se utiliza para definir los módulos que serán compartidos entre el host y los remotos. En tu caso, estás compartiendo los módulos 'react', 'react-dom' y 'react-redux'.
+
+La opción `shared` se utiliza para definir los módulos que serán compartidos entre el host y los remotos. En este caso, se comparten los módulos 'react', 'react-dom' y 'react-redux'.
 
 Esto significa que tanto el host como los remotos utilizarán la misma instancia de estos módulos. Esto es beneficioso por varias razones:
 
