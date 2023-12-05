@@ -81,8 +81,7 @@ Para ejecutar el proyecto principal o host y los proyectos remotos en tu entorno
 
 1. **Inicia los proyectos remotos:** Asegúrate de que los proyectos remotos estén en ejecución. Puedes hacer esto ejecutando el comando `yarn build && yarn preview` o `yarn start` en el directorio de cada proyecto remoto. 
 Deberían estar accesibles en `http://localhost:5174` y `http://localhost:5175`.
-2. **Inicia el proyecto host:** Antes de iniciar el proyecto host, es una buena práctica verificar que los proyectos remotos estén en ejecución y sean accesibles. Puedes hacer esto simplemente navegando a `http://localhost:5174` y `http://localhost:5175` en tu navegador web. Si puedes ver el contenido esperado en estas páginas, entonces los proyectos remotos están en ejecución y listos para ser utilizados por el proyecto host.
-Ahora puedes iniciar el proyecto host ejecutando el comando `yarn run dev` en su directorio. Esto iniciará el proyecto en `http://localhost:5173`
+2. **Inicia el proyecto host:** Antes de iniciar el proyecto host, es una buena práctica verificar que los proyectos remotos estén en ejecución y sean accesibles. Puedes hacer esto simplemente navegando a cada una de sus URL.
 Si sigues estos pasos, deberías poder ver y interactuar con tu aplicación completa en tu navegador web.
 
 Recuerden que el proyecto host se integra con los proyectos remotos, por lo que necesitarás tener los proyectos remotos en ejecución para que el proyecto host funcione correctamente.
@@ -175,7 +174,7 @@ De esta forma, el proyecto host se integra con los microfrontends remotos a trav
 
 Es importante que los nombres y la configuración de los remotos coincidan con los del host para que todo funcione correctamente. 
 
-En este caso, tanto el host csomo los remotos están configurados para exponer/importar el componente `MovieList`.
+En este caso, tanto el host como los remotos están configurados para exponer/importar el componente `MovieList`.
 
 ====
 
