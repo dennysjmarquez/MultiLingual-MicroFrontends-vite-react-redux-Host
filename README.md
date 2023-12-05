@@ -77,8 +77,7 @@ Para ejecutar el proyecto principal o host y los proyectos remotos en tu entorno
 1. **Clonar los repositorios:** Primero, necesitarás clonar los repositorios de los proyectos en tu máquina local.
 2. **Instalar las dependencias:** En cada proyecto, posiciónese en la raíz del directorio y ejecute el comando `yarn` para instalar las dependencias.
 
-
-## **Cómo usar la aplicación**
+### **Cómo usar la aplicación**
 
 1. **Inicia los proyectos remotos:** Asegúrate de que los proyectos remotos estén en ejecución. Puedes hacer esto ejecutando el comando `yarn build && yarn preview` o `yarn start` en el directorio de cada proyecto remoto. 
 Deberían estar accesibles en `http://localhost:5174` y `http://localhost:5175`.
@@ -88,7 +87,97 @@ Si sigues estos pasos, deberías poder ver y interactuar con tu aplicación comp
 
 Recuerden que el proyecto host se integra con los proyectos remotos, por lo que necesitarás tener los proyectos remotos en ejecución para que el proyecto host funcione correctamente.
 
-¡Espero que esto les ayude a utilizar la aplicación!
+### **Integración con Microfrontends**
+
+La configuración de Federation se define en `vite.config.js`
+
+### **Proyecto Host**
+
+```js
+// Federation Plugin
+federation({
+  name: 'host',
+  remotes: {
+    remoteMovieList1: 'http://localhost:3000/remoteEntry.js', 
+    remoteMovieList2: 'http://localhost:3001/remoteEntry.js'
+  } 
+})
+```
+- `remotes`: Define los microfrontends remotos con sus rutas específicas.
+- `shared`: Define los módulos que serán compartidos entre el host y los microfrontends remotos. Al marcar un módulo como compartido, estás indicando que tanto el host como los microfrontends remotos deben utilizar la misma instancia de ese módulo.
+
+La opción `shared` se utiliza para definir los módulos que serán compartidos entre el host y los remotos. En tu caso, estás compartiendo los módulos 'react', 'react-dom' y 'react-redux'.
+
+Esto significa que tanto el host como los remotos utilizarán la misma instancia de estos módulos. Esto es beneficioso por varias razones:
+
+1. **Optimización del rendimiento**: Al compartir módulos entre el host y los remotos, se evita la necesidad de cargar la misma biblioteca varias veces. Esto puede resultar en una disminución significativa del tiempo de carga y del uso de la memoria.
+
+2. **Consistencia**: Al utilizar la misma instancia de un módulo en todo el proyecto, se garantiza que todos los componentes se comporten de la misma manera, ya que todos utilizan exactamente la misma versión del módulo.
+
+3. **Interoperabilidad**: Al compartir módulos, se facilita la comunicación y la interoperabilidad entre el host y los remotos. Esto es especialmente útil cuando se utilizan bibliotecas de gestión de estado como 'react-redux', ya que permite que el estado se gestione de manera coherente en todo el proyecto.
+
+Es importante que la lista de módulos compartidos en la configuración de la Federación del host coincida con la de los remotos para que la compartición de módulos funcione correctamente.
+
+### **Proyectos Remotos**
+
+Cada microfrontend remoto expone componentes en su propio `remoteEntry.js`
+
+**RemoteMovieList1:**
+
+```js
+federation({
+	// Configura el plugin de Module Federation.
+	name: 'remoteMovieList1', // Define el nombre del remoto.
+	filename: 'remoteEntry.js', // Define el nombre del archivo de entrada remoto.
+	exposes: {
+		// Define los módulos que se exponen.
+		'./MovieList': './src/components/MovieList'
+	},
+	shared: ['react', 'react-dom', 'react-redux'] // Define los módulos compartidos.
+})
+```
+
+**RemoteMovieList2:**
+
+```js
+federation({
+	// Configura el plugin de Module Federation.
+	name: 'remoteMovieList2', // Define el nombre del remoto.
+	filename: 'remoteEntry.js', // Define el nombre del archivo de entrada remoto.
+	exposes: {
+		// Define los módulos que se exponen.
+		'./MovieList': './src/components/MovieList'
+	},
+	shared: ['react', 'react-dom', 'react-redux'] // Define los módulos compartidos.
+})
+```
+
+### **Consumo en el Host**
+
+El componente `Series.jsx` del host consume los remotos
+
+```js
+// Carga de módulos de micro-frontends
+const MovieList = React.lazy(() =>
+	import('remoteMovieList1/MovieList').catch(() => ({ default: () => null }))
+)
+const MovieList2 = React.lazy(() =>
+	import('remoteMovieList2/MovieList').catch(() => ({ default: () => null }))
+)
+```
+
+En el host, estás consumiendo estos componentes remotos en tu componente Series.jsx utilizando React.lazy() para importarlos.
+
+Además, estás manejando los errores de importación con .catch(() => ({ default: () => null })) para asegurarte de que tu aplicación no se rompa si hay algún problema al importar los componentes remotos.
+
+De esta forma, el proyecto host se integra con los microfrontends remotos a través de Federation.
+
+Es importante que los nombres y la configuración de los remotos coincidan con los del host para que todo funcione correctamente. En este caso, tanto el host como los remotos están configurados para exponer/importar el componente `MovieList`.
+
+====
+
+¡Espero que esto les ayude a utilizar la aplicación! 🤝👍
+
 
 -- END --
 
