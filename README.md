@@ -170,11 +170,11 @@ En el host, estás consumiendo estos componentes remotos en el componente Series
 
 Además, se está manejando los errores de importación con .catch(() => ({ default: () => null })) para asegurar de que la aplicación no se rompa si hay algún problema al importar los componentes remotos.
 
-De esta forma, el proyecto host se integra con los microfrontends remotos a través de Federation.
-
 Es importante que los nombres y la configuración de los remotos coincidan con los del host para que todo funcione correctamente. 
 
 En este caso, tanto el host como los remotos están configurados para exponer/importar el componente `MovieList`.
+
+De esta forma, el proyecto host se integra con los microfrontends remotos a través de Federation.
 
 ====
 
