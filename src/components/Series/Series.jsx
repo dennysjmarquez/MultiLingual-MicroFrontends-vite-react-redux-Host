@@ -1,6 +1,11 @@
 import React, { Suspense, useState } from 'react'
 import i18n from '@/i18n.js'
 import { useTranslation } from 'react-i18next'
+// Estilos
+import { SeriesStyles } from '@/components/Series/styles/seriesStyles.js'
+
+// Textos
+import './lang'
 
 // Carga de módulos de micro-frontends
 const MovieList = React.lazy(() =>
@@ -9,12 +14,6 @@ const MovieList = React.lazy(() =>
 const MovieList2 = React.lazy(() =>
 	import('remoteMovieList2/MovieList').catch(() => ({ default: () => null }))
 )
-
-// Estilos
-import { SeriesStyles } from '@/components/Series/styles/seriesStyles.js'
-
-// Textos
-import './lang'
 
 const SeriesComponent = ({}) => {
 	const { t } = useTranslation()
@@ -27,6 +26,8 @@ const SeriesComponent = ({}) => {
 			<div className="series">
 				<div className="series__nav">
 					<h3>Series:</h3>
+
+
 					<div className="nav__ButtonGroup">
 						<button
 							onClick={() => handleSerieClick('serie1')}
@@ -34,7 +35,7 @@ const SeriesComponent = ({}) => {
 								serieSelected === 'serie1' ? 'ButtonGroup__button--active' : ''
 							}`}
 						>
-							Harry Potter
+							{t('components_series:BUTTON_SERIE1_TEXT')}
 						</button>
 						<button
 							onClick={() => handleSerieClick('serie2')}
@@ -42,14 +43,16 @@ const SeriesComponent = ({}) => {
 								serieSelected === 'serie2' ? 'ButtonGroup__button--active' : ''
 							}`}
 						>
-							Rick y Morty
+							{t('components_series:BUTTON_SERIE2_TEXT')}
 						</button>
 					</div>
 				</div>
 
 				<div className="series__body">
 					{serieSelected === null && (
-						<div className="body__tooltip">{t('components_series:TOOLTIP')}</div>
+						<div className="body__tooltip">
+							{t('components_series:TOOLTIP')}
+						</div>
 					)}
 
 					{serieSelected === 'serie1' && (

@@ -1,4 +1,6 @@
 {
   "SERIES_TITLE": "Series",
-  "TOOLTIP": "¡Hola! Arriba 👆 encontrarás una barra con botones, cada uno representando una serie diferente. Haz clic en cualquiera de ellos para ver más detalles sobre esa serie."
+  "TOOLTIP": "¡Hola! Arriba 👆 encontrarás una barra con botones, cada uno representando una serie diferente. Haz clic en cualquiera de ellos para ver más detalles sobre esa serie.",
+  "BUTTON_SERIE1_TEXT": "Rick y Morty",
+  "BUTTON_SERIE2_TEXT": "Harry Potter"
 }
