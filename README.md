@@ -14,7 +14,6 @@ Se implementó internacionalización utilizando i18next, con carga dinámica de 
 
 Todo esto contribuye a la escalabilidad y mantenibilidad del proyecto.
 
-Para los estilos se aplicó Styled Components con la metodología BEM para mantener consistencia.
 ---
 
 ✅ Puede ver una demo alojada en:
@@ -28,6 +27,8 @@ Para probar la demo, sigue estos pasos:
 ➡️ Interactúa con la demo. Verás la actividad de los Microfrontends en ‘Network’, haciendo clic en los botones de las series o películas.
 
 ---
+
+Para los estilos se aplicó Styled Components con la metodología BEM para mantener consistencia.
 
 ### **¿Que es Module Federation?**
 
